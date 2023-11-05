@@ -14,6 +14,17 @@
   <servlet-class>com.votifysoft.servlet.AppA</servlet-class>
   </servlet>
 
+  <servlet>
+  <servlet-name>ChiefB</servlet-name>
+  <servlet-class>com.votifysoft.servlet.AppB</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+  <servlet-name>ChiefB</servlet-name>
+  <url-pattern>/chiefb</url-pattern>
+  </servlet-mapping>
+
+
   <servlet-mapping>
   <servlet-name>ChiefA</servlet-name>
   <url-pattern>/chiefa</url-pattern>
