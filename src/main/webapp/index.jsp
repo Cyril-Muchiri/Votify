@@ -299,21 +299,24 @@ input {
     </style>
     <br>
     <br>
-        <div class="cont">
-            <div class="form sign-in">
-                <h2>Welcome</h2>
+    <div class="cont">
+        <div class="form sign-in">
+            <h2>Welcome</h2>
+            <form action="./login" method="post">
                 <label>
                     <span>Email</span>
-                    <input type="email" />
+                    <input type="email" name="email" required />
                 </label>
                 <label>
                     <span>Password</span>
-                    <input type="password" />
+                    <input type="pass" name="pass" required />
                 </label>
                 <p class="forgot-pass">Forgot password?</p>
-                <button type="button" class="submit">Sign In</button>
-             
-            </div>
+                <button type="submit" class="submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+    
             <div class="sub-cont">
                 <div class="img">
                     <div class="imgtext m--up">
