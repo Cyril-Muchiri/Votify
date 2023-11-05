@@ -18,10 +18,8 @@ public class Login extends HttpServlet {
         String userPass = req.getParameter("password");
 
         if (userEmail.equals("chief@test.com") && userPass.equals("Admin123")) {
-            // PrintWriter writer = res.getWriter();
-            // writer.println("<h1>Welclome " + userEmail + "</h1>");
-            RequestDispatcher dispatcher=req.getRequestDispatcher("./app/home.html");
-            dispatcher.include(req, res);
+            res.sendRedirect("./app/home.html");
+          
         } else {
             PrintWriter writer = res.getWriter();
             writer.println("<h1>invalid login <a href=\".\">Login again</a></h1>");
