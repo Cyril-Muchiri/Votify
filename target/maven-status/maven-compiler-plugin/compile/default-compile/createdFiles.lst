@@ -1,4 +1,5 @@
 com/votifysoft/servlet/AppA.class
 com/votifysoft/servlet/AppB.class
 com/votifysoft/auth/Login.class
+com/votifysoft/auth/Regsiter.class
 com/votifysoft/servlet/App.class

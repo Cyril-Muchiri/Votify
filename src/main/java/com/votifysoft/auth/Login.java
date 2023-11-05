@@ -3,6 +3,7 @@ package com.votifysoft.auth;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,11 +15,13 @@ public class Login extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String userEmail = req.getParameter("email");
-        String userPass = req.getParameter("pass");
+        String userPass = req.getParameter("password");
 
         if (userEmail.equals("chief@test.com") && userPass.equals("Admin123")) {
-            PrintWriter writer = res.getWriter();
-            writer.println("<h1>Welclome " + userEmail + "</h1>");
+            // PrintWriter writer = res.getWriter();
+            // writer.println("<h1>Welclome " + userEmail + "</h1>");
+            RequestDispatcher dispatcher=req.getRequestDispatcher("./app/home.html");
+            dispatcher.include(req, res);
         } else {
             PrintWriter writer = res.getWriter();
             writer.println("<h1>invalid login <a href=\".\">Login again</a></h1>");
