@@ -1,5 +1,9 @@
-com/votifysoft/servlet/AppA.class
+com/votifysoft/appservlet/VoteServlet.class
 com/votifysoft/servlet/AppB.class
 com/votifysoft/auth/Login.class
+com/votifysoft/home/Home.class
+com/votifysoft/repository/PersonRepository.class
+com/votifysoft/servlet/AppA.class
 com/votifysoft/auth/Regsiter.class
 com/votifysoft/servlet/App.class
+com/votifysoft/voter/Person.class
