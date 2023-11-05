@@ -4,7 +4,7 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  <servlet>
+  <!-- <servlet>
   <servlet-name>Chief</servlet-name>
   <servlet-class>com.votifysoft.servlet.App</servlet-class>
   </servlet>
@@ -33,7 +33,7 @@
   <servlet-mapping>
    <servlet-name>Chief</servlet-name>
    <url-pattern>/chief</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
 </web-app>
 
 

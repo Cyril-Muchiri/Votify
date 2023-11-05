@@ -64,7 +64,7 @@ button {
     transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
 }
 
-.cont.s--signup .sub-cont {
+.cont.signup .sub-cont {
     -webkit-transform: translate3d(-640px, 0, 0);
     transform: translate3d(-640px, 0, 0);
 }
@@ -116,12 +116,12 @@ button {
     background: rgba(0, 0, 0, 0.6);
 }
 
-.cont.s--signup .img:before {
+.cont.signup .img:before {
     -webkit-transform: translate3d(640px, 0, 0);
     transform: translate3d(640px, 0, 0);
 }
 
-.img__text {
+.imgtext {
     z-index: 2;
     position: absolute;
     left: 0;
@@ -136,32 +136,32 @@ button {
     transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
 }
 
-.img__text h2 {
+.imgtext h2 {
     margin-bottom: 10px;
     font-weight: normal;
 }
 
-.img__text p {
+.imgtext p {
     font-size: 14px;
     line-height: 1.5;
 }
 
-.cont.s--signup .img__text.m--up {
+.cont.s--signup .imgtext.m--up {
     -webkit-transform: translateX(520px);
     transform: translateX(520px);
 }
 
-.img__text.m--in {
+.imgtext.m--in {
     -webkit-transform: translateX(-520px);
     transform: translateX(-520px);
 }
 
-.cont.s--signup .img__text.m--in {
+.cont.s--signup .imgtext.m--in {
     -webkit-transform: translateX(0);
     transform: translateX(0);
 }
 
-.img__btn {
+.imgbtn {
     overflow: hidden;
     z-index: 2;
     position: relative;
@@ -175,7 +175,7 @@ button {
     cursor: pointer;
 }
 
-.img__btn:after {
+.imgbtn:after {
     content: '';
     z-index: 2;
     position: absolute;
@@ -187,7 +187,7 @@ button {
     border-radius: 30px;
 }
 
-.img__btn span {
+.imgbtn span {
     position: absolute;
     left: 0;
     top: 0;
@@ -205,17 +205,17 @@ button {
     transition: transform 1.2s, -webkit-transform 1.2s;
 }
 
-.img__btn span.m--in {
+.imgbtn span.m--in {
     -webkit-transform: translateY(-72px);
     transform: translateY(-72px);
 }
 
-.cont.s--signup .img__btn span.m--in {
+.cont.signup .imgbtn span.m--in {
     -webkit-transform: translateY(0);
     transform: translateY(0);
 }
 
-.cont.s--signup .img__btn span.m--up {
+.cont.signup .imgbtn span.m--up {
     -webkit-transform: translateY(72px);
     transform: translateY(72px);
 }
@@ -278,7 +278,7 @@ input {
     transition-timing-function: ease-out;
 }
 
-.cont.s--signup .sign-in {
+.cont.signup .sign-in {
     -webkit-transition-timing-function: ease-in-out;
     transition-timing-function: ease-in-out;
     -webkit-transition-duration: 1.2s;
@@ -292,7 +292,7 @@ input {
     transform: translate3d(-900px, 0, 0);
 }
 
-.cont.s--signup .sign-up {
+.cont.signup .sign-up {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
@@ -316,15 +316,15 @@ input {
             </div>
             <div class="sub-cont">
                 <div class="img">
-                    <div class="img__text m--up">
+                    <div class="imgtext m--up">
                      
                         <h3>Don't have an account? Please Sign up!<h3>
                     </div>
-                    <div class="img__text m--in">
+                    <div class="imgtext m--in">
                     
                         <h3>If you already has an account, just sign in.<h3>
                     </div>
-                    <div class="img__btn">
+                    <div class="imgbtn">
                         <span class="m--up">Sign Up</span>
                         <span class="m--in">Sign In</span>
                     </div>
@@ -350,8 +350,8 @@ input {
         </div>
     
         <script>
-            document.querySelector('.img__btn').addEventListener('click', function() {
-                document.querySelector('.cont').classList.toggle('s--signup');
+            document.querySelector('.imgbtn').addEventListener('click', function() {
+                document.querySelector('.cont').classList.toggle('signup');
             });
         </script>
 </html>
