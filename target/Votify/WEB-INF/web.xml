@@ -9,6 +9,16 @@
   <servlet-class>com.votifysoft.servlet.App</servlet-class>
   </servlet>
 
+  <servlet>
+  <servlet-name>ChiefA</servlet-name>
+  <servlet-class>com.votifysoft.servlet.AppA</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+  <servlet-name>ChiefA</servlet-name>
+  <url-pattern>/chiefa</url-pattern>
+  </servlet-mapping>
+
   <servlet-mapping>
    <servlet-name>Chief</servlet-name>
    <url-pattern>/chief</url-pattern>
