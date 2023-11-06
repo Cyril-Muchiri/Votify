@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/login")
 public class Login extends HttpServlet {
@@ -18,9 +19,12 @@ public class Login extends HttpServlet {
         String userPass = req.getParameter("password");
 
         if (userEmail.equals("chief@test.com") && userPass.equals("Admin123")) {
-        
+            HttpSession session = req.getSession();
+            session.setAttribute("userEmail", userEmail);
+            // session.setAttribute("hasVoted", false);
+
             req.getRequestDispatcher("/home").forward(req, res);
-            
+
         } else {
             PrintWriter writer = res.getWriter();
             writer.println("<h1>invalid login <a href=\".\">Login again</a></h1>");
