@@ -27,5 +27,14 @@ public class PersonRepository {
             }
         }
     }
+
+    public static int getVotesForPerson(int id) {
+        for (Person person : persons) {
+            if (person.getId() == id) {
+                return person.getVotes();
+            }
+        }
+        return -1; // Person not found
+    }
 }
 

@@ -18,8 +18,9 @@ public class Login extends HttpServlet {
         String userPass = req.getParameter("password");
 
         if (userEmail.equals("chief@test.com") && userPass.equals("Admin123")) {
-            res.sendRedirect("./app/home.html");
-          
+        
+            req.getRequestDispatcher("/home").forward(req, res);
+            
         } else {
             PrintWriter writer = res.getWriter();
             writer.println("<h1>invalid login <a href=\".\">Login again</a></h1>");

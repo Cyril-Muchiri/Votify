@@ -4,36 +4,19 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  <!-- <servlet>
-  <servlet-name>Chief</servlet-name>
-  <servlet-class>com.votifysoft.servlet.App</servlet-class>
-  </servlet>
 
-  <servlet>
+
+  <!-- <servlet>
   <servlet-name>ChiefA</servlet-name>
   <servlet-class>com.votifysoft.servlet.AppA</servlet-class>
-  </servlet>
+  </servlet> -->
 
-  <servlet>
+  <!-- <servlet>
   <servlet-name>ChiefB</servlet-name>
   <servlet-class>com.votifysoft.servlet.AppB</servlet-class>
-  </servlet>
+  </servlet> -->  
 
-  <servlet-mapping>
-  <servlet-name>ChiefB</servlet-name>
-  <url-pattern>/chiefb</url-pattern>
-  </servlet-mapping>
-
-
-  <servlet-mapping>
-  <servlet-name>ChiefA</servlet-name>
-  <url-pattern>/chiefa</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-   <servlet-name>Chief</servlet-name>
-   <url-pattern>/chief</url-pattern>
-  </servlet-mapping> -->
+ 
 </web-app>
 
 

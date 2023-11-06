@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,21 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.votifysoft.repository.PersonRepository;
 
-@WebServlet("/vote")
-public class VoteServlet extends HttpServlet {
+@WebServlet("/home")
+public class VotingInterfaceServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String personIdParam = request.getParameter("personId");
-        if (personIdParam == null || personIdParam.isEmpty()) {
-            System.out.println("person id param empty");
-        } else {
-            int personId = Integer.parseInt(request.getParameter("personId"));
-            System.out.println(personId);
-            PersonRepository.voteForPerson(personId);
 
-            // Generate the updated HTML content
-            String updatedHtml = "<!DOCTYPE html>\n" +
+        // Generate the HTML for the voting interface
+        String votingInterfaceHtml = "<!DOCTYPE html>\n" +
             "<html lang=\"en\">\n" +
             "  <head>\n" +
             "    <meta charset=\"UTF-8\" />\n" +
@@ -154,10 +146,10 @@ public class VoteServlet extends HttpServlet {
             "  </body>\n" +
             "</html>";
 
-            // Set the content type and write the updated HTML to the response
-            response.setContentType("text/html");
-            PrintWriter writer = response.getWriter();
-            writer.write(updatedHtml);
-        }
+        // Set the content type and write the HTML to the response
+        response.setContentType("text/html");
+        PrintWriter writer = response.getWriter();
+        writer.write(votingInterfaceHtml);
     }
 }
+
