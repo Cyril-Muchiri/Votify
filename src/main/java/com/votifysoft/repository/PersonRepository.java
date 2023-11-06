@@ -9,10 +9,10 @@ public class PersonRepository {
     private static List<Person> persons = new ArrayList<>();
 
     static {
-        persons.add(new Person(1, "Barack Obama", 0));
-        persons.add(new Person(2, "Elon Musk", 0));
-        persons.add(new Person(3, "Cyril Muchiri", 0));
-        persons.add(new Person(4, "Lopkoiyan", 0));
+        persons.add(new Person(0, "Barack Obama", 0));
+        persons.add(new Person(1, "Elon Musk", 0));
+        persons.add(new Person(2, "Cyril Muchiri", 0));
+        persons.add(new Person(3, "Lopkoiyan", 0));
     }
 
     public static List<Person> getPersons() {
@@ -34,7 +34,14 @@ public class PersonRepository {
                 return person.getVotes();
             }
         }
-        return -1; // Person not found
+        return -1; 
+    }
+
+    public static String getNameAtIndex(int index) {
+        if (index >= 0 && index < persons.size()) {
+            return persons.get(index).getName();
+        } else {
+            return null; 
+        }
     }
 }
-
