@@ -1,11 +1,13 @@
 package com.votifysoft.beans;
 
+
+
 import com.votifysoft.repository.PersonRepository;
 
 public class HomeBean {
     public String userDashboard(Boolean hasVoted) {
 
-        String popupScript = hasVoted ? "alert('You have already voted!');" : "";
+        String popupScript = hasVoted ? "alert('You have voted succesfully !');" : "";
         if (hasVoted) {
             return "<!DOCTYPE html>\n" +
                     "<html lang=\"en\">\n" +
@@ -13,6 +15,7 @@ public class HomeBean {
                     "    <meta charset=\"UTF-8\" />\n" +
                     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n" +
                     "    <title>Person Cards</title>\n" +
+
                     "    <style>\n" +
                     "      .main {\n" +
                     "        display: grid;\n" +
@@ -85,9 +88,11 @@ public class HomeBean {
                     "  <body>\n" +
                     "    <div class=\"main\">\n" +
                     "<button class=\"logout-btn\" onclick=\"location.href='./index.html'\">Logout</button>\n" +
-                    "      <div class=\"create-polls\">\n" +
+                    "      <div class=\"active-polls\">\n" +
                     "        <div>\n" +
-                    "          <button class=\"create-btn\">create Poll</button>\n" +
+                    "           <form action=\"./processnames\" method=\"get\">\n" +
+                    "        <button type=\"submit\" class=\"view-active\">Create a poll</button>\n" +
+                    "      </form>\n" +
                     "        </div>\n" +
                     "      </div>\n" +
                     "      <div class=\"active-polls\">\n" +
