@@ -1,7 +1,6 @@
 package com.votifysoft.beans;
 
-
-
+import com.votifysoft.css.HomeCss;
 import com.votifysoft.repository.PersonRepository;
 
 public class HomeBean {
@@ -15,84 +14,132 @@ public class HomeBean {
                     "    <meta charset=\"UTF-8\" />\n" +
                     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n" +
                     "    <title>Person Cards</title>\n" +
-
-                    "    <style>\n" +
+                    "<style>\n" +
+                    "      body {\n" +
+                    "        background-color: antiquewhite;\n" +
+                    "          font-family: Arial, sans-serif;\n" +
+                    "          display: flex;\n" +
+                    "          margin-top: 5%;\n" +
+                    "      }\n" +
+                    "\n" +
                     "      .main {\n" +
-                    "        display: grid;\n" +
-                    "        gap: 10px;\n" +
-                    "        max-width: 1200px;\n" +
-                    "        margin: 0 auto;\n" +
+                    "          display: grid;\n" +
+                    "          gap: 20px;\n" +
+                    "          max-width: 1200px;\n" +
+                    "          margin: 0 auto;\n" +
+                    "          background-color: #fff;\n" +
+                    "          padding: 20px;\n" +
+                    "          border-radius: 10px;\n" +
+                    "          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n" +
                     "      }\n" +
-                    "      .create-polls {\n" +
-                    "        border-radius: 10px;\n" +
-                    "      }\n" +
-                    "      .active-polls {\n" +
-                    "        border-radius: 10px;\n" +
-                    "      }\n" +
+                    "\n" +
                     "      .card-container {\n" +
-                    "        display: flex;\n" +
-                    "        justify-content: space-around;\n" +
-                    "        flex-wrap: wrap;\n" +
+                    "          display: flex;\n" +
+                    "          justify-content: space-evenly;\n" +
                     "      }\n" +
+                    "\n" +
+                    "      .logout-btn {\n" +
+                    "          background-color: #5f80b4; \n" +
+                    "          color: #fff;\n" +
+                    "          border: none;\n" +
+                    "          padding: 10px 20px;\n" +
+                    "          font-size: 16px;\n" +
+                    "          cursor: pointer;\n" +
+                    "          border-radius: 5px;\n" +
+                    "      }\n" +
+                    "\n" +
+                    "      .logout-btn:hover {\n" +
+                    "          background-color: #4b6f9f;\n" +
+                    "      }\n" +
+                    "\n" +
+                    "      .active-polls,\n" +
+                    "      .div {\n" +
+                    "          color: #fff;\n" +
+                    "          border-radius: 5px;\n" +
+                    "          padding: 10px 20px;\n" +
+                    "          text-align: center;\n" +
+                    "      }\n" +
+                    "\n" +
+                    "      .active-polls .view-active,\n" +
+                    "      .div button {\n" +
+                    "          color: black;\n" +
+                    "          \n" +
+                    "          border: none;\n" +
+                    "          padding: 10px 20px;\n" +
+                    "          font-size: 16px;\n" +
+                    "          cursor: pointer;\n" +
+                    "          border-radius: 5px;\n" +
+                    "          margin-top: 10px;\n" +
+                    "      }\n" +
+                    "\n" +
+                    "      .active-polls .view-active:hover,\n" +
+                    "      .div button:hover {\n" +
+                    "          background-color: #5f80b4; \n" +
+                    "          color: #fff;\n" +
+                    "      }\n" +
+                    "\n" +
                     "      .card {\n" +
-                    "        width: 200px;\n" +
-                    "        border: 1px solid #ccc;\n" +
-                    "        border-radius: 10px;\n" +
-                    "        margin: 10px;\n" +
-                    "        text-align: center;\n" +
-                    "        padding: 10px;\n" +
+                    "          width: 200px;\n" +
+                    "          border: 1px solid #ccc;\n" +
+                    "          border-radius: 10px;\n" +
+                    "          margin: 10px;\n" +
+                    "          text-align: center;\n" +
+                    "          padding: 10px;\n" +
+                    "          background-color: #fff;\n" +
+                    "          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n" +
+                    "          display: inline-block;\n" +
+                    "\n" +
                     "      }\n" +
+                    "\n" +
                     "      .card img {\n" +
-                    "        border-radius: 50%;\n" +
-                    "        max-width: 100px;\n" +
-                    "        max-height: 100px;\n" +
-                    "        margin-bottom: 10px;\n" +
+                    "          border-radius: 50%;\n" +
+                    "          max-width: 100px;\n" +
+                    "          max-height: 100px;\n" +
+                    "          margin-bottom: 10px;\n" +
                     "      }\n" +
+                    "\n" +
                     "      .card h2 {\n" +
-                    "        font-size: 1.2em;\n" +
-                    "        margin-bottom: 5px;\n" +
+                    "          font-size: 1.2em;\n" +
+                    "          margin-bottom: 5px;\n" +
+                    "          color: #5f80b4;\n" +
                     "      }\n" +
-                    "      .vote{\n" +
-                    "        display: flex;\n" +
-                    "        justify-content: center;\n" +
-                    "        height: 15vh;\n" +
+                    "\n" +
+                    "      .card p {\n" +
+                    "          color: #795548;\n" +
                     "      }\n" +
-                    "      .create-polls{\n" +
-                    "        display: flex;\n" +
-                    "        height: 15vh;\n" +
-                    "        justify-content: center;\n" +
+                    "\n" +
+                    "      .vote-btn {\n" +
+                    "          width: 15vw;\n" +
+                    "          height: 10vh;\n" +
+                    "          background-color: #5f80b4; \n" +
+                    "          color: #fff;\n" +
+                    "          border: none;\n" +
+                    "          padding: 10px 20px;\n" +
+                    "          font-size: 16px;\n" +
+                    "          cursor: pointer;\n" +
+                    "          border-radius: 5px;\n" +
+                    "          margin-top: 10px;\n" +
                     "      }\n" +
-                    "      .active-polls{\n" +
-                    "        display: flex;\n" +
-                    "        height: 15vh;\n" +
-                    "        justify-content: center;\n" +
+                    "\n" +
+                    "      .vote-btn:hover {\n" +
+                    "          background-color: #4b6f9f;\n" +
                     "      }\n" +
-                    "      .create-btn{\n" +
-                    "        width: 12vw;\n" +
-                    "        height: 8vh;\n" +
+                    "\n" +
+                    "      .logout {\n" +
+                    "          display: flex;\n" +
+                    "          justify-content: right;\n" +
                     "      }\n" +
-                    "      .vote-btn{\n" +
-                    "        width: 15vw;\n" +
-                    "        height: 10vh;\n" +
-                    "      }\n" +
-                    "      .view-active{\n" +
-                    "        width: 25vw;\n" +
-                    "        height: 10vh;\n" +
-                    "      }\n" +
-                    "  .logout-btn {\n" +
-                    "    width: 8vw;\n" +
-                    "    justify-self: right;\n" +
-                    "  }\n" +
-                    "    </style>\n" +
+                    "  </style>\n" +
                     "  </head>\n" +
                     "  <body>\n" +
                     "    <div class=\"main\">\n" +
-                    "<button class=\"logout-btn\" onclick=\"location.href='./index.html'\">Logout</button>\n" +
-                    "      <div class=\"active-polls\">\n" +
-                    "        <div>\n" +
-                    "           <form action=\"./processnames\" method=\"get\">\n" +
-                    "        <button type=\"submit\" class=\"view-active\">Create a poll</button>\n" +
-                    "      </form>\n" +
+                    "          <div class=\"log-div\"> <form action=\"./logout\" method=\"get\">\n" +
+                    "        <button type=\"submit\" class=\"logout-btn\">logout</button>\n" +
+                    "      </form>\n</div>" +
+                    "      <div class=\"create-polls\">\n" +
+                    "        <div class=\"div\">\n" +
+                    "<button class=\"view-active\" onclick=\"location.href='./createPoll.html'\">create Poll</button>\n"
+                    +
                     "        </div>\n" +
                     "      </div>\n" +
                     "      <div class=\"active-polls\">\n" +
@@ -110,7 +157,7 @@ public class HomeBean {
                     "          <p>Total Votes: " + PersonRepository.getVotesForPerson(0) + "</p>\n" +
                     "          <form action=\"./vote\" method=\"post\">\n" +
                     "            <input type=\"hidden\" name=\"personId\" value=\"0\">\n" +
-                    "            <button type=\"submit\" class=\"vote-btn\" disabled>Vote</button>\n" +
+                    "<button type=\"submit\" class=\"vote-btn\" disabled>Vote</button>" +
                     "          </form>\n" +
                     "        </div>\n" +
                     "        <div class=\"card\">\n" +
@@ -119,7 +166,7 @@ public class HomeBean {
                     "          <p>Total Votes: " + PersonRepository.getVotesForPerson(1) + "</p>\n" +
                     "          <form action=\"./vote\" method=\"post\">\n" +
                     "            <input type=\"hidden\" name=\"personId\" value=\"1\">\n" +
-                    "            <button type=\"submit\" class=\"vote-btn\"disabled>Vote</button>\n" +
+                    "<button type=\"submit\" class=\"vote-btn\" disabled>Vote</button>" +
                     "          </form>\n" +
                     "        </div>\n" +
                     "        <div class=\"card\">\n" +
@@ -128,7 +175,7 @@ public class HomeBean {
                     "          <p>Total Votes: " + PersonRepository.getVotesForPerson(2) + "</p>\n" +
                     "          <form action=\"./vote\" method=\"post\">\n" +
                     "            <input type=\"hidden\" name=\"personId\" value=\"2\">\n" +
-                    "            <button type=\"submit\" class=\"vote-btn\"disabled>Vote</button>\n" +
+                    "<button type=\"submit\" class=\"vote-btn\" disabled>Vote</button>" +
                     "          </form>\n" +
                     "        </div>\n" +
                     "        <div class=\"card\">\n" +
@@ -137,7 +184,7 @@ public class HomeBean {
                     "          <p>Total Votes: " + PersonRepository.getVotesForPerson(3) + "</p>\n" +
                     "          <form action=\"./vote\" method=\"post\">\n" +
                     "            <input type=\"hidden\" name=\"personId\" value=\"3\">\n" +
-                    "            <button type=\"submit\" class=\"vote-btn\"disabled>Vote</button>\n" +
+                    "<button type=\"submit\" class=\"vote-btn\" disabled>Vote</button>" +
                     "          </form>\n" +
                     "        </div>\n" +
                     "      </div>\n" +
@@ -152,81 +199,132 @@ public class HomeBean {
                     "    <meta charset=\"UTF-8\" />\n" +
                     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n" +
                     "    <title>Person Cards</title>\n" +
-                    "    <style>\n" +
+                    "<style>\n" +
+                    "      body {\n" +
+                    "        background-color: antiquewhite;\n" +
+                    "          font-family: Arial, sans-serif;\n" +
+                    "          display: flex;\n" +
+                    "          margin-top: 5%;\n" +
+                    "      }\n" +
+                    "\n" +
                     "      .main {\n" +
-                    "        display: grid;\n" +
-                    "        gap: 10px;\n" +
-                    "        max-width: 1200px;\n" +
-                    "        margin: 0 auto;\n" +
+                    "          display: grid;\n" +
+                    "          gap: 20px;\n" +
+                    "          max-width: 1200px;\n" +
+                    "          margin: 0 auto;\n" +
+                    "          background-color: #fff;\n" +
+                    "          padding: 20px;\n" +
+                    "          border-radius: 10px;\n" +
+                    "          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n" +
                     "      }\n" +
-                    "      .create-polls {\n" +
-                    "        border-radius: 10px;\n" +
-                    "      }\n" +
-                    "      .active-polls {\n" +
-                    "        border-radius: 10px;\n" +
-                    "      }\n" +
+                    "\n" +
                     "      .card-container {\n" +
-                    "        display: flex;\n" +
-                    "        justify-content: space-around;\n" +
-                    "        flex-wrap: wrap;\n" +
+                    "          display: flex;\n" +
+                    "          justify-content: space-evenly;\n" +
                     "      }\n" +
+                    "\n" +
+                    "      .logout-btn {\n" +
+                    "          background-color: #5f80b4; \n" +
+                    "          color: #fff;\n" +
+                    "          border: none;\n" +
+                    "          padding: 10px 20px;\n" +
+                    "          font-size: 16px;\n" +
+                    "          cursor: pointer;\n" +
+                    "          border-radius: 5px;\n" +
+                    "      }\n" +
+                    "\n" +
+                    "      .logout-btn:hover {\n" +
+                    "          background-color: #4b6f9f;\n" +
+                    "      }\n" +
+                    "\n" +
+                    "      .active-polls,\n" +
+                    "      .div {\n" +
+                    "          color: #fff;\n" +
+                    "          border-radius: 5px;\n" +
+                    "          padding: 10px 20px;\n" +
+                    "          text-align: center;\n" +
+                    "      }\n" +
+                    "\n" +
+                    "      .active-polls .view-active,\n" +
+                    "      .div button {\n" +
+                    "          color: black;\n" +
+                    "          \n" +
+                    "          border: none;\n" +
+                    "          padding: 10px 20px;\n" +
+                    "          font-size: 16px;\n" +
+                    "          cursor: pointer;\n" +
+                    "          border-radius: 5px;\n" +
+                    "          margin-top: 10px;\n" +
+                    "      }\n" +
+                    "\n" +
+                    "      .active-polls .view-active:hover,\n" +
+                    "      .div button:hover {\n" +
+                    "          background-color: #5f80b4; \n" +
+                    "          color: #fff;\n" +
+                    "      }\n" +
+                    "\n" +
                     "      .card {\n" +
-                    "        width: 200px;\n" +
-                    "        border: 1px solid #ccc;\n" +
-                    "        border-radius: 10px;\n" +
-                    "        margin: 10px;\n" +
-                    "        text-align: center;\n" +
-                    "        padding: 10px;\n" +
+                    "          width: 200px;\n" +
+                    "          border: 1px solid #ccc;\n" +
+                    "          border-radius: 10px;\n" +
+                    "          margin: 10px;\n" +
+                    "          text-align: center;\n" +
+                    "          padding: 10px;\n" +
+                    "          background-color: #fff;\n" +
+                    "          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n" +
+                    "          display: inline-block;\n" +
+                    "\n" +
                     "      }\n" +
+                    "\n" +
                     "      .card img {\n" +
-                    "        border-radius: 50%;\n" +
-                    "        max-width: 100px;\n" +
-                    "        max-height: 100px;\n" +
-                    "        margin-bottom: 10px;\n" +
+                    "          border-radius: 50%;\n" +
+                    "          max-width: 100px;\n" +
+                    "          max-height: 100px;\n" +
+                    "          margin-bottom: 10px;\n" +
                     "      }\n" +
+                    "\n" +
                     "      .card h2 {\n" +
-                    "        font-size: 1.2em;\n" +
-                    "        margin-bottom: 5px;\n" +
+                    "          font-size: 1.2em;\n" +
+                    "          margin-bottom: 5px;\n" +
+                    "          color: #5f80b4;\n" +
                     "      }\n" +
-                    "      .vote{\n" +
-                    "        display: flex;\n" +
-                    "        justify-content: center;\n" +
-                    "        height: 15vh;\n" +
+                    "\n" +
+                    "      .card p {\n" +
+                    "          color: #795548;\n" +
                     "      }\n" +
-                    "      .create-polls{\n" +
-                    "        display: flex;\n" +
-                    "        height: 15vh;\n" +
-                    "        justify-content: center;\n" +
+                    "\n" +
+                    "      .vote-btn {\n" +
+                    "          width: 15vw;\n" +
+                    "          height: 10vh;\n" +
+                    "          background-color: #5f80b4; \n" +
+                    "          color: #fff;\n" +
+                    "          border: none;\n" +
+                    "          padding: 10px 20px;\n" +
+                    "          font-size: 16px;\n" +
+                    "          cursor: pointer;\n" +
+                    "          border-radius: 5px;\n" +
+                    "          margin-top: 10px;\n" +
                     "      }\n" +
-                    "      .active-polls{\n" +
-                    "        display: flex;\n" +
-                    "        height: 15vh;\n" +
-                    "        justify-content: center;\n" +
+                    "\n" +
+                    "      .vote-btn:hover {\n" +
+                    "          background-color: #4b6f9f;\n" +
                     "      }\n" +
-                    "      .create-btn{\n" +
-                    "        width: 12vw;\n" +
-                    "        height: 8vh;\n" +
+                    "\n" +
+                    "      .logout {\n" +
+                    "          display: flex;\n" +
+                    "          justify-content: right;\n" +
                     "      }\n" +
-                    "      .vote-btn{\n" +
-                    "        width: 15vw;\n" +
-                    "        height: 10vh;\n" +
-                    "      }\n" +
-                    "      .view-active{\n" +
-                    "        width: 25vw;\n" +
-                    "        height: 10vh;\n" +
-                    "      }\n" +
-                    "  .logout-btn {\n" +
-                    "    width: 8vw;\n" +
-                    "    justify-self: right;\n" +
-                    "  }\n" +
-                    "    </style>\n" +
+                    "  </style>\n" +
                     "  </head>\n" +
                     "  <body>\n" +
                     "    <div class=\"main\">\n" +
-                    "<button class=\"logout-btn\" onclick=\"location.href='./index.html'\">Logout</button>\n" +
+                    "          <div class=\"log-div\"> <form action=\"./logout\" method=\"get\">\n" +
+                    "        <button type=\"submit\" class=\"logout-btn\">logout</button>\n" +
+                    "      </form>\n</div>" +
                     "      <div class=\"create-polls\">\n" +
-                    "        <div>\n" +
-                    "          <button class=\"create-btn\">create Poll</button>\n" +
+                    "        <div class=\"div\">\n" +
+                    "<button class=\"view-active\" onclick=\"location.href='./createPoll.html'\">create Poll</button>\n"
+                    +
                     "        </div>\n" +
                     "      </div>\n" +
                     "      <div class=\"active-polls\">\n" +

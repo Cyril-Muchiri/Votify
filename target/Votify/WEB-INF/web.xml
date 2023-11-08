@@ -5,17 +5,10 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
-
-  <!-- <servlet>
-  <servlet-name>ChiefA</servlet-name>
-  <servlet-class>com.votifysoft.servlet.AppA</servlet-class>
-  </servlet> -->
-
-  <!-- <servlet>
-  <servlet-name>ChiefB</servlet-name>
-  <servlet-class>com.votifysoft.servlet.AppB</servlet-class>
-  </servlet> -->  
-
+ <context-param>
+    <param-name>AppName</param-name>
+    <param-value>Votify</param-value>
+  </context-param>
  
 </web-app>
 

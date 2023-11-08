@@ -15,6 +15,18 @@ import com.votifysoft.beans.HomeBean;
 @WebServlet("/home")
 public class VotingInterfaceServlet extends HttpServlet {
 
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        HttpSession session = req.getSession();
+        session.setAttribute("hasVoted",false);
+        HomeBean homeBean=new HomeBean();
+
+        PrintWriter writer=resp.getWriter();
+
+       writer.write(homeBean.userDashboard((boolean) (session.getAttribute("hasVoted"))));
+
+    }
+    
+    
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
                 HttpSession session = request.getSession();
@@ -23,7 +35,7 @@ public class VotingInterfaceServlet extends HttpServlet {
         HomeBean homeBean = new HomeBean();
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();
-        // writer.write(homeBean.userDashboard((boolean) (session.getAttribute("hasVoted"))));
-        writer.write(homeBean.userDashboard((boolean)session.getAttribute("hasVoted")));
+        writer.write(homeBean.userDashboard((boolean) (session.getAttribute("hasVoted"))));
+        // writer.write(homeBean.userDashboard((boolean)session.getAttribute("hasVoted")));
     }
 }
