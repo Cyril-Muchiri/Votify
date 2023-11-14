@@ -13,8 +13,9 @@ import com.votifysoft.beans.UserBeanI;
 import com.votifysoft.model.entity.User;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
-// @WebServlet("/user")
+ @WebServlet("/register")
 public class UserAction extends BaseAction {
 
     UserBeanI userBean = new UserBean();
@@ -28,6 +29,9 @@ public class UserAction extends BaseAction {
 
         resp.sendRedirect("./");
 
+    }
 
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException{
+        resp.sendRedirect("./register.html");
     }
 }
