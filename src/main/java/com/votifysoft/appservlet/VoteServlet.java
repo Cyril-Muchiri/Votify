@@ -44,11 +44,15 @@ public class VoteServlet extends HttpServlet {
                 writer.write(bean.userDashboard(true));
 
             } else {
-                System.out.println(personId);
+               
                 PersonRepository.voteForPerson(personId);
-                HomeBean bean = new HomeBean();
-                PrintWriter writer = response.getWriter();
-                writer.write(bean.userDashboard(true));
+                request.getSession().setAttribute("voteSuccessMessage", "Your vote has been cast successfully!");
+
+                // Set hasVoted attribute to true in the session
+                request.getSession().setAttribute("hasVoted", true);
+    
+                // Forward the request to home.jsp
+                request.getRequestDispatcher("/home.jsp").forward(request, response);
 
             }
         }
