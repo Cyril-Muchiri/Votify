@@ -16,6 +16,13 @@ import com.votifysoft.repository.PersonRepository;
 @WebServlet("/vote")
 public class VoteServlet extends HttpServlet {
 
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        HttpSession session = req.getSession();
+        session.setAttribute("hasVoted",true);
+        resp.sendRedirect("./home.jsp");
+
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String personIdParam = request.getParameter("personId");
@@ -32,6 +39,9 @@ public class VoteServlet extends HttpServlet {
                 request.setAttribute("message", "You have already voted.");
                 request.getRequestDispatcher("/home").forward(request, response);
                 System.out.println(request.getSession().getAttribute("hasVoted"));
+                 HomeBean bean = new HomeBean();
+                PrintWriter writer = response.getWriter();
+                writer.write(bean.userDashboard(true));
 
             } else {
                 System.out.println(personId);
