@@ -17,20 +17,6 @@ import com.votifysoft.database.UserRegistry;
 
 public class Login extends HttpServlet {
 
-    // protected void doGet(HttpServletRequest request, HttpServletResponse response)
-    //         throws ServletException, IOException {
-    //     InputStream inputStream = getServletContext().getResourceAsStream("./index.html");
-    //     response.setContentType("text/html");
-    //     OutputStream out = response.getOutputStream();
-    //     byte[] buffer = new byte[1024];
-    //     int bytesRead;
-    //     while ((bytesRead = inputStream.read(buffer)) != -1) {
-    //         out.write(buffer, 0, bytesRead);
-    //     }
-    //     inputStream.close();
-    //     out.close();
-    // }
-
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String userEmail = req.getParameter("email");

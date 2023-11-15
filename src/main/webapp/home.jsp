@@ -131,7 +131,9 @@
         </div>
         <div class="create-polls">
             <div class="div">
-                <button class="view-active" onclick="location.href='${pageContext.request.contextPath}/createPoll.html'">create Poll</button>
+            <form action="./newPoll" method="get">
+                <button class="view-active" type="submit">create Poll</button>
+                </form>
             </div>
         </div>
         <div class="active-polls">
@@ -168,10 +170,12 @@
             </c:forEach>
         </div>
     </div>
-     <script>
-        // Always display the alert script
+    <script>
+    <% Boolean hasVoted = (Boolean) session.getAttribute("hasVoted"); %>
+    <% if (hasVoted != null && hasVoted) { %>
         alert('You have voted successfully!');
-    </script>
+    <% } %>
+</script>
 </body>
   
 </html>

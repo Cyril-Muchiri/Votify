@@ -12,15 +12,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.votifysoft.beans.PollCreatorBean;
-
 @WebServlet("/processnames")
 public class processNamesServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        PrintWriter writer = response.getWriter();
-        PollCreatorBean bean = new PollCreatorBean();
-        writer.write(bean.createPoll());
+       
 
     }
 

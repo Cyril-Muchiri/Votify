@@ -3,9 +3,7 @@ package com.votifysoft.database;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/user")
 public class UserRegistry extends HttpServlet {
     private static List<User> users = new ArrayList<>();
-    // private static Map<String, User> userNameToUser = new HashMap<>();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -28,7 +25,6 @@ public class UserRegistry extends HttpServlet {
 
         if (registrationSuccess) {
             PrintWriter writer = response.getWriter();
-            // writer.write("Registration successful! ");
             System.out.println("Registration successful! "+email + " & " + password);
             response.sendRedirect("./login");
         } else {
