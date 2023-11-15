@@ -8,6 +8,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Person Cards</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <style>
         body {
             background-color: antiquewhite;
@@ -160,11 +161,17 @@
                     <input type="hidden" name="personId" value="${index}">
                     <button type="submit" class="vote-btn">Vote</button>
                 </form>
+   
             </c:otherwise>
         </c:choose>
                 </div>
             </c:forEach>
         </div>
     </div>
+     <script>
+        // Always display the alert script
+        alert('You have voted successfully!');
+    </script>
 </body>
+  
 </html>
