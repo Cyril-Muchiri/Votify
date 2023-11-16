@@ -56,16 +56,13 @@ public class CreatePollServlet extends HttpServlet {
         StringBuilder html = new StringBuilder("<div class=\"card-container\">");
     
         for (int index = 0; index <names.size(); index++) {
+
             html.append("<div class=\"card\">");
             html.append("<c:set var=\"personName\" value=\"").append(names.get(index)).append("\" />");
-            html.append("<h2>").append("${personName}").append("</h2>");
+            html.append("<h2>").append(names.get(index)).append("</h2>");
             html.append("<p>Total Votes: 0</p>");
             html.append("<c:choose>");
             html.append("<c:when test=\"${sessionScope.hasVoted}\">");
-            // html.append("<form action=\"./vote\" method=\"post\">");
-            // html.append("<input type=\"hidden\" name=\"personId\" value=\"").append(index).append("\">");
-            // html.append("<button type=\"submit\" class=\"vote-btn\" disabled>Already Voted</button>");
-            // html.append("</form>");
             html.append("</c:when>");
             html.append("<c:otherwise>");
             html.append("<form action=\"./vote\" method=\"post\">");

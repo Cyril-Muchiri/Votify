@@ -10,7 +10,6 @@ com/votifysoft/database/UserRegistry$User.class
 com/votifysoft/voter/Person.class
 com/votifysoft/beans/AuthBean.class
 com/votifysoft/event/AppInit.class
-com/votifysoft/filters/AuthFilters.class
 com/votifysoft/database/UserRegistry.class
 com/votifysoft/css/HomeCss.class
 com/votifysoft/repository/PersonRepository.class

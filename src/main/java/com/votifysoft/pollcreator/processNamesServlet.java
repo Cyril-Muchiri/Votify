@@ -1,7 +1,6 @@
 package com.votifysoft.pollcreator;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
