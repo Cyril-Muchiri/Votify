@@ -35,26 +35,10 @@ public class UserRegistry extends HttpServlet {
     }
 
     public static boolean registerUser(String username, String password, String email) {
-        // User user = new User(username, password, email);
-        // users.add(user);
-        // userNameToUser.put(username, user);
         UsersDb userAdd=UsersDb.getDbInstance();
         userAdd.getUsers().add(new com.votifysoft.model.entity.User(null, username, password, email));
         return true;
     }
-
-    // public static boolean authenticate(String userEmail, String password) {
-    //     User user = userNameToUser.get(userEmail);
-    //     if (user != null && user.getPassword().equals(password)) {
-    //         System.out.println("auth user " + userEmail + " " + password);
-    //         return true;
-    //     } else {
-    //         // System.out.println(user.getEmail()+" "+user.getPassword());
-    //         return true;
-    //     }
-
-    // }
-
     static class User {
         private String username;
         private String password;

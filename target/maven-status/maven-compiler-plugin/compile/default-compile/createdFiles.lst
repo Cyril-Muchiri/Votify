@@ -4,13 +4,14 @@ com/votifysoft/beans/HomeBean.class
 com/votifysoft/beans/UserBeanI.class
 com/votifysoft/database/UsersDb.class
 com/votifysoft/beans/AuthBeanI.class
+com/votifysoft/renderers/HomepageRender.class
 com/votifysoft/appservlet/CreatePollServlet.class
 com/votifysoft/database/UserRegistry$User.class
 com/votifysoft/voter/Person.class
 com/votifysoft/beans/AuthBean.class
 com/votifysoft/event/AppInit.class
+com/votifysoft/filters/AuthFilters.class
 com/votifysoft/database/UserRegistry.class
-com/votifysoft/appservlet/VotingInterfaceServlet.class
 com/votifysoft/css/HomeCss.class
 com/votifysoft/repository/PersonRepository.class
 com/votifysoft/action/LogoutAction.class

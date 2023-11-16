@@ -14,8 +14,8 @@ import javax.servlet.http.HttpSession;
 public class HomepageServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-        HttpSession session = req.getSession();
-        session.setAttribute("hasVoted",false);
+        // HttpSession session = req.getSession();
+        // session.setAttribute("hasVoted",false);
         resp.sendRedirect("./home.jsp");
 
     }

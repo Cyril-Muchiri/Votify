@@ -38,8 +38,6 @@ public class processNamesServlet extends HttpServlet {
             System.out.println("Received Name: " + name);
         }
 
-        
-
         response.getWriter().write("Names received successfully!");
     }
 }

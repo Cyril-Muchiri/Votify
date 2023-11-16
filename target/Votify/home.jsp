@@ -169,6 +169,8 @@
                 </div>
             </c:forEach>
         </div>
+        ${requestScope.cardContainerHTML}
+        
     </div>
     <script>
     <% Boolean hasVoted = (Boolean) session.getAttribute("hasVoted"); %>
