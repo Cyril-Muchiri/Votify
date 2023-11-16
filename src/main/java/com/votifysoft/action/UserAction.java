@@ -13,7 +13,6 @@ import com.votifysoft.beans.UserBeanI;
 import com.votifysoft.model.entity.User;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
  @WebServlet("/register")
 public class UserAction extends BaseAction {
