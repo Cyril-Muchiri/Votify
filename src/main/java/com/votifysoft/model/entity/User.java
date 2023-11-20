@@ -12,8 +12,8 @@ public class User implements Serializable {
     @DbTableColumn(name = "id", definition = "int")
     private Long id;
 
-    @DbTableColumn(name = "username")
-    private String username;
+    @DbTableColumn(name = "userName")
+    private String userName;
 
     @DbTableColumn(name = "userEmail")
     private String userEmail;
@@ -31,9 +31,9 @@ public class User implements Serializable {
 
     public User(){}
 
-    public User(Long id, String username,String userEmail, String password) {
+    public User(Long id, String userName,String userEmail, String password) {
         this.id = id;
-        this.username = username;
+        this.userName = userName;
         this.password = password;
         this.userEmail=userEmail;
     }
@@ -46,12 +46,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsername(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {

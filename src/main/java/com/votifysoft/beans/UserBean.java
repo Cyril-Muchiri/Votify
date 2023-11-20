@@ -12,28 +12,18 @@ import com.votifysoft.model.entity.User;
 public class UserBean implements UserBeanI,Serializable {
 UsersDb database = UsersDb.getDbInstance();
 
-    @Override
-    public  boolean register(User user) throws SQLException {
+@Override
+public boolean register(User user) throws SQLException {
 
-        if (user.getPassword() !=null) {
-           
-            PreparedStatement sqlStmt = MySqlDb.getInstance().getConnection()
-                .prepareStatement("insert into users(id,username,userEmail,password) values(?,?,?,?)");
+    if (user.getPassword() != null) {
 
-            sqlStmt.setInt(1, ThreadLocalRandom.current().nextInt(1, 1000));
-            sqlStmt.setString(2, user.getUsername());
-            sqlStmt.setString(3, user.getUserEmail());
-            sqlStmt.setString(4, user.getPassword());
+        MySqlDb.insert(user);
 
-            sqlStmt.executeUpdate();
-
-            return true;
-        }
-
-        return false;
+        return true;
     }
 
-    @Override
+    return false;
+}
     public boolean unregister(User user) {
         return true;
     }

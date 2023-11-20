@@ -25,7 +25,7 @@ public class UserAction extends BaseAction {
             ex.printStackTrace();
         }
 
-        resp.sendRedirect("./home.jsp");
+        resp.sendRedirect("./");
 
 
     }

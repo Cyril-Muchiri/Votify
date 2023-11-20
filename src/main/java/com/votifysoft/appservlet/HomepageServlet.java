@@ -17,6 +17,7 @@ public class HomepageServlet extends HttpServlet {
 
         resp.sendRedirect("./home.jsp");
 
+        System.out.println("This page has been loaded");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -7,6 +7,7 @@ com/votifysoft/database/helper/DbTable.class
 com/votifysoft/event/AppInit.class
 com/votifysoft/database/UserRegistry.class
 com/votifysoft/database/helper/DbTableColumn.class
+com/votifysoft/database/helper/DbTableId.class
 com/votifysoft/action/UserAction.class
 com/votifysoft/beans/UserBean.class
 com/votifysoft/action/BaseAction.class

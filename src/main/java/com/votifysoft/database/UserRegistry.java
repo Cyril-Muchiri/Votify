@@ -17,7 +17,7 @@ public class UserRegistry extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String userName = request.getParameter("userNmail");
+        String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         String email = request.getParameter("userEmail");
 
