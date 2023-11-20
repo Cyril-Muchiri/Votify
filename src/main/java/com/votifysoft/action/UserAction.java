@@ -10,20 +10,23 @@ import com.votifysoft.beans.UserBeanI;
 import com.votifysoft.model.entity.User;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
- @WebServlet("/register")
+ @WebServlet("/user")
 public class UserAction extends BaseAction {
 
     UserBeanI userBean = new UserBean();
 
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        User registerUser = new User();
-        serializeForm(registerUser, req.getParameterMap());
+        try {
+            userBean.register(serializeForm(User.class, req.getParameterMap()));
+        } catch (Exception ex){
+            ex.printStackTrace();
+        }
 
-        userBean.register(registerUser);
+        resp.sendRedirect("./home.jsp");
 
-        resp.sendRedirect("./");
 
     }
 

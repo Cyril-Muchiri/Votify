@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/user")
+
 public class UserRegistry extends HttpServlet {
     private static List<User> users = new ArrayList<>();
 
@@ -36,7 +36,7 @@ public class UserRegistry extends HttpServlet {
 
     public static boolean registerUser(String username, String password, String email) {
         UsersDb userAdd=UsersDb.getDbInstance();
-        userAdd.getUsers().add(new com.votifysoft.model.entity.User(null, username, password, email));
+        // userAdd.getUsers().add(new com.votifysoft.model.entity.User(null, username, password, email));
         return true;
     }
     static class User {

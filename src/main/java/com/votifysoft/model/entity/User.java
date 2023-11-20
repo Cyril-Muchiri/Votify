@@ -2,23 +2,38 @@ package com.votifysoft.model.entity;
 
 import java.io.Serializable;
 
+import com.votifysoft.database.helper.DbTable;
+import com.votifysoft.database.helper.DbTableColumn;
+
+
+@DbTable(name = "users")
 public class User implements Serializable {
 
+    @DbTableColumn(name = "id", definition = "int")
     private Long id;
 
-    private String userName;
+    @DbTableColumn(name = "username")
+    private String username;
 
+    @DbTableColumn(name = "userEmail")
     private String userEmail;
 
-    private String password;
+    public String getUserEmail() {
+        return userEmail;
+    }
 
-    private String confirmPassword;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    @DbTableColumn(name = "password")
+    private String password;
 
     public User(){}
 
-    public User(Long id, String userName, String password,String userEmail) {
+    public User(Long id, String username,String userEmail, String password) {
         this.id = id;
-        this.userName = userName;
+        this.username = username;
         this.password = password;
         this.userEmail=userEmail;
     }
@@ -32,11 +47,11 @@ public class User implements Serializable {
     }
 
     public String getUsername() {
-        return userName;
+        return username;
     }
 
-    public void setUsername(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -45,21 +60,5 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getConfirmPassword() {
-        return confirmPassword;
-    }
-
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
-    }
-
-      public String getUserEmail() {
-        return userEmail;
-    }
-
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
     }
 }

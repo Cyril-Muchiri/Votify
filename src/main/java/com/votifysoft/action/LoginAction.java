@@ -33,34 +33,29 @@ public class LoginAction extends BaseAction {
         }
     }
 
-    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String userEmail = req.getParameter("email");
-        String userPass = req.getParameter("password");
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 
-        UsersDb db = UsersDb.getDbInstance();
-        System.out.println("db created at: " + db.getDatabaseCreateAt());
-        
-        for (User user : db.getUsers()) {
-            if (userEmail.equals(user.getUserEmail()) && userPass.equals(user.getPassword())) {
-            
-                Cookie userCookie = new Cookie("userEmail", userEmail);
-                
-                userCookie.setMaxAge(0 * 2 * 0);
-                
-                resp.addCookie(userCookie);
+        User loginUser  = serializeForm(User.class, req.getParameterMap());
 
-                HttpSession session = req.getSession();
-                session.setAttribute("loggedInId", new Date().getTime() + "");
-                session.setAttribute("userEmail", userEmail);
-                session.setAttribute("hasVoted", false);
+        try {
+            User userDetails = authBean.authenticate(loginUser);
+
+            if (userDetails != null) {
+                HttpSession httpSession = req.getSession(true);
+
+                httpSession.setAttribute("loggedInId", new Date().getTime() + "");
+                httpSession.setAttribute("username", loginUser.getUsername());
 
                 resp.sendRedirect("./home");
-                return; 
+
             }
+
+            PrintWriter print = resp.getWriter();
+            print.write("<html><body>Invalid login details <a href=\".\"> Login again </a></body></html>");
+        }catch (Exception ex) {
+            ex.printStackTrace();
         }
 
-        PrintWriter print = resp.getWriter();
-        print.write("<html><body>Invalid login details <a href=\".\"> Login again </a></body></html>");
     }
 
 }
