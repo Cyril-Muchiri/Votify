@@ -25,9 +25,10 @@ public class AuthBean implements AuthBeanI, Serializable {
 
         while (result.next()) {
               user.setUsername(result.getString("userName"));
-           user.setUserEmail(result.getString("email"));
+           user.setUserEmail(result.getString("userEmail"));
             user.setPassword(result.getString("password"));
         }
+        // System.out.println(user.getUserEmail());
 
         return user;
     }
