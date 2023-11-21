@@ -1,16 +1,13 @@
 # Build Stage
-FROM maven:3.6.3-openjdk-11 AS build
+FROM maven:3.6.3 AS build
 WORKDIR /app
-COPY pom.xml .
-RUN mvn clean install
-COPY src ./src
-RUN mvn clean package
+COPY . .
+RUN mvn clean compile package
 
 # Deployment Stage
-FROM quay.io/wildfly/wildfly:latest-jdk11
-WORKDIR /opt/jboss/wildfly/standalone/deployments/
-COPY --from=build /app/target/Votify.war .
+FROM jboss/wildfly:latest AS deploy
+COPY --from=build /app/target/Votify.war /opt/jboss/wildfly/standalone/deployments/
 
 EXPOSE 8080
 
-CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0"] && /opt/jboss/wildfly/bin/jboss-cli.sh --connect --command="deploy /opt/jboss/wildfly/standalone/deployments/Votify.war"
+CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0"]
